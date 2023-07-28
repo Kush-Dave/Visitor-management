@@ -8,9 +8,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>Hello, Visitors!</title>
+    <title>Hello, Visitor!</title>
   </head>
   <body>
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,45 +28,20 @@
     </nav>
 
   <div class="container my-5">
-    <h2> Enquiry Form </h2>
+    <h2> Add Products </h2>
     <form method='post'>
       {% csrf_token %}
-      {% comment %} <div class="form-row"> {% endcomment %}
       <div class="form-group col-md-5">
-        <label>Name:</label>
-        <input type="text" class="form-control" id="name" name="name">
-      </div>
-      
-      <div class="form-group col-md-5">
-        <label>Contact Number:</label>
-        <input type="number" class="form-control" id="number" name="number">
-      </div>
-    
-      <div class="form-group col-md-5">
-        <label>Email:</label>
-        <input type="email" class="form-control" id="email" name="email">
-      </div>
-      
-      <div class="form-group col-md-5">
-        <label>Company Name:</label>
-        <input type="text" class="form-control" id="company_name" name="company_name">
-      </div>
-        
-      <div class="form-group col-md-5">
-        <label>Product Name:</label><br>
-        <select class="selectpicker search-fields" name="selected_product">
-          <option disabled="disabled" selected="selected"> Select Product </option>
-          {% for selected_product in product_search %}
-            <option value="{{selected_product}}" name="selected_product">{{selected_product}}</option>
-          {% endfor %}
-      </select>
+        <label>Enter Product Name:</label>
+        <input type="text" class="form-control" id="product_name" name="product_name">
       </div>
 
       <div class="form-group col-md-5">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
+
     </form>
-  </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
