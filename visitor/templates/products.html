@@ -27,20 +27,38 @@
       </div>
     </nav>
 
-  <div class="container my-5">
-    <h2> Add Products </h2>
-    <form method='post'>
+  <center>
+    <h2> Product List </h2>
+    <form method="POST">
       {% csrf_token %}
-      <div class="form-group col-md-5">
-        <label>Enter Product Name:</label>
-        <input type="text" class="form-control" id="product_name" name="product_name">
-      </div>
+    From: <input type="date" name="fromdate">
+    To: <input type="date" name="todate">
+    <input type="submit" value=search>
 
-      <div class="form-group col-md-5">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-
+      <table border=1>
+        <tr>
+          <th>Sr. no.</th>
+          <th>Name</th>
+          <th>Number</th>
+          <th>Email</th>
+          <th>Company_name</th>
+          <th>Product_name</th>
+          <th>Date</th>
+        </tr>
+        {% for data in obj1 %}
+          <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.number}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.company_name}}</td>
+            <td>{{data.product_name}}</td>
+            <td>{{data.date}}</td>
+          </tr>
+        {% endfor %}
+      </table>
     </form>
+  </center>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
